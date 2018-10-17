@@ -29,7 +29,7 @@ test.TSS=sum((absorbancy-yk_mean).^2);
 test.ESS=sum((a*concentration+b-yk_mean).^2);
 test.RSS=sum((absorbancy-a*concentration-b).^2);
 test.F=test.ESS/(test.RSS/(size(absorbancy,1)-2));
-test.alpha=0.05;
+test.alpha=0.02;
 test.F_alpha=finv(1-test.alpha,1,size(absorbancy,1)-2);
 if(test.F>test.F_alpha)
     test.result=1;
