@@ -14,6 +14,7 @@ test_result.y(:,1)=test_data_input*(train_result.A(1,1:5))'+train_result.A(1,6);
 test_result.y(:,2)=test_data_input*(train_result.A(2,1:5))'+train_result.A(2,6);
 test_result.y=mapminmax('reverse',test_result.y',train_result.PS_output)';
 test_result.e=test_result.y-test_data_output;
+test_result.e_mean=mean(test_result.e);
 
 end
 

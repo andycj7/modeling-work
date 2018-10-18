@@ -18,7 +18,7 @@ for i=1:m
    temp=train_data_input*A(:,1:5)';
    temp(:,1)=temp(:,1)+A(1,6);
    temp(:,2)=temp(:,2)+A(2,6);
-   E=train_data_output-(temp);
+   E=train_data_output-(temp);%每一轮实际值和预测值的误差
    temp1=E'*train_data_input;
    temp2=sum(E)';
    temp1(1,:)=temp1(1,:)+temp2(1,:);
@@ -31,7 +31,10 @@ for i=1:m
 end
 train_result=struct();
 train_result.A=A;
+train_result.E=mean(E);
 train_result.PS_input=PS1;
 train_result.PS_output=PS2;
+train_result.m=m;
+train_result.v=v;
 end
 
