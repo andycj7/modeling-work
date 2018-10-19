@@ -41,12 +41,14 @@ figure(2)
 x1=-110:1:110;y1=x1;
 [X1 Y1]=meshgrid(x1,y1);
 nn=length(x1);
-Z1=zeros(nn.nn);
+Z1=zeros(nn,nn);
 for i=1:nn
-    Z1(i,j)=f([x1(i,j);y1(i,j)]);
+    for j=1:nn
+        Z1(i,j)=f([X1(i,j);Y1(i,j)]);
+    end
 end
 
 hold on
 
-contour(x1,y1,z1)
-plot(x(1,:),x(2,:),'o-','linewidth',1)
+contour(X1,Y1,Z1)
+plot(X1(1,:),X1(2,:),'o-','linewidth',1)
